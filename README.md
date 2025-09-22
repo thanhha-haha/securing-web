@@ -14,3 +14,6 @@
 ## Đăng nhập với vai trò admin - chuyển hướng đến /admin
 <img width="1909" height="958" alt="Screenshot 2025-09-22 145958" src="https://github.com/user-attachments/assets/ba2f5ed1-c31c-4970-a229-f5ed8940300d" />
 <img width="1919" height="977" alt="Screenshot 2025-09-22 143955" src="https://github.com/user-attachments/assets/9136be3c-70fa-4b68-b980-cd4a079e0315" />
+
+## mật khẩu đã được mã hóa
+<img width="1221" height="264" alt="Screenshot 2025-09-22 143728" src="https://github.com/user-attachments/assets/0e8bf525-b5cc-43b0-8509-3378be92b5bb" />
