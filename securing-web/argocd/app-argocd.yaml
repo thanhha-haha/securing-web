@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: securing-web
+  namespace: argocd   # ArgoCD phải được cài trong namespace này
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/thanhha-haha/securing-web.git   # 🔹 Repo chứa file YAML triển khai
+    targetRevision: main                                                        # 🔹 Branch cần deploy
+    path: k8s                                                                   # 🔹 Thư mục chứa deployment.yaml, service.yaml,...
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default                                                          # 🔹 Namespace muốn deploy app vào
+
+  syncPolicy:
+    automated:
+      prune: true       # Xóa các resource không còn trong Git repo
+      selfHeal: true    # Nếu có thay đổi ngoài Git, ArgoCD tự sửa lại
+    syncOptions:
+      - CreateNamespace=true
