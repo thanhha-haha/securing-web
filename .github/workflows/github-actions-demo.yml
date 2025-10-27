@@ -8,20 +8,6 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: securing_web
-        ports:
-          - 3306:3306
-        options: >-
-          --health-cmd="mysqladmin ping -h localhost -proot"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=3
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -43,7 +29,7 @@ jobs:
           echo "MySQL not ready in time!" && exit 1
 
       - name: Build with Maven
-        run: mvn -B clean package -DskipTests=false
+        run: mvn -B clean package -DskipTests
         working-directory: ./securing-web
 
       - name: Set up Docker Buildx
