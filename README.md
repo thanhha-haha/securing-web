@@ -3,6 +3,7 @@
 ## **MVC_Spring_boot_Securing Web** 
 ## **Docker Run**
 ## **Running on K8s**
+## **CI/CD**
 ### **Lê Thanh Hà - 23020530**
 
 ## **Trang chủ **
@@ -30,6 +31,25 @@
 <img width="1916" height="970" alt="Screenshot 2025-10-20 120647" src="https://github.com/user-attachments/assets/f3d1f8f4-2558-4bbc-b396-12f05a67c906" />
 <img width="1917" height="970" alt="Screenshot 2025-10-20 120726" src="https://github.com/user-attachments/assets/d37c19cc-6d65-4386-b737-045bf9293659" />
 <img width="1916" height="965" alt="Screenshot 2025-10-20 120708" src="https://github.com/user-attachments/assets/32ab9008-146d-4184-addc-1b1d5ca0613e" />
+
+## CI/CD
+### CI với Github Action
+<img width="1886" height="868" alt="image" src="https://github.com/user-attachments/assets/07b5c7b6-76d3-45f0-928f-2adbaead506b" />
+<img width="1436" height="134" alt="Screenshot 2025-10-27 140749" src="https://github.com/user-attachments/assets/77a4e3ef-8c61-4e11-8ba0-0e2d80b4ad2f" />
+
+### CD với ArgoCD
+<img width="1909" height="863" alt="Screenshot 2025-10-27 140723" src="https://github.com/user-attachments/assets/b9ef0ef1-f068-4858-9725-5ccdd25c6355" />
+Sau khi thay đổi code, Sync lại 
+<img width="1918" height="862" alt="Screenshot 2025-10-27 141417" src="https://github.com/user-attachments/assets/42b9f7ce-ce0c-49fa-8f65-e07d60a389e9" />
+Bổ sung do phần trên chưa thêm MySQL deployment và MySQL service
+<img width="1918" height="867" alt="Screenshot 2025-10-27 145827" src="https://github.com/user-attachments/assets/f2d17f86-281f-4adf-aef4-8d8491765648" />
+Trang web truy cập được bình thường
+<img width="1860" height="406" alt="Screenshot 2025-10-27 150127" src="https://github.com/user-attachments/assets/6100c2b8-7672-4171-8e50-9657c030be6f" />
+<img width="1915" height="744" alt="Screenshot 2025-10-27 150146" src="https://github.com/user-attachments/assets/248b32c3-ca41-416b-ab38-863ef4730097" />
+
+
+
+
 
 
 
