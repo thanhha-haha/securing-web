@@ -8,6 +8,20 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: 17012005
+          MYSQL_DATABASE: securing_web
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,7 +36,7 @@ jobs:
         run: |
           echo "Waiting for MySQL to be ready..."
           for i in {1..15}; do
-            nc -z localhost 3306 && echo "MySQL is up!" && exit 0
+            nc -z 127.0.0.1 3306 && echo "MySQL is up!" && exit 0
             echo "Waiting..."
             sleep 5
           done
@@ -45,6 +59,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./securing-web./Dockerfile
+          file: ./securing-web/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/securing-web-app:latest
