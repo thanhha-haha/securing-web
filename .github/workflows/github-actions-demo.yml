@@ -2,11 +2,12 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ thanhha-haha-patch-1 ]
+    branches: [ thanhha-haha-patch-1 ]   # chạy khi push lên nhánh này
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,13 +23,15 @@ jobs:
 
       - name: Debug secrets
         run: |
-          echo "Username: ${{ secrets.DOCKER_USERNAME }}"
-          echo "Password length: ${#${{ secrets.DOCKER_PASSWORD }}}"
-
+          echo "🔍 Username: ${{ secrets.DOCKER_USERNAME }}"
+          if [ -z "${{ secrets.DOCKER_PASSWORD }}" ]; then
+            echo "❌ Password is EMPTY or not found in secrets!"
+          else
+            echo "✅ Password length: ${#${{ secrets.DOCKER_PASSWORD }}}"
+          fi
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/securing-web-app:latest
-
