@@ -2,7 +2,7 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ thanhha-haha-patch-1 ]
 
 jobs:
   build-and-push:
