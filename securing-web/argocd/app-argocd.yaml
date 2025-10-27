@@ -8,8 +8,8 @@ spec:
 
   source:
     repoURL: https://github.com/thanhha-haha/securing-web.git   # 🔹 Repo chứa file YAML triển khai
-    targetRevision: main                                                        # 🔹 Branch cần deploy
-    path: k8s                                                                   # 🔹 Thư mục chứa deployment.yaml, service.yaml,...
+    targetRevision: master                                                        # 🔹 Branch cần deploy
+    path: securing-web/argocd                                                                   # 🔹 Thư mục chứa deployment.yaml, service.yaml,...
 
   destination:
     server: https://kubernetes.default.svc
