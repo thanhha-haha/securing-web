@@ -14,4 +14,5 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/admin").setViewName("admin");
         registry.addViewController("/login").setViewName("login");
     }
+    // đây là cấu hình MVC để ánh xạ các URL đến các view tương ứng trong ứng dụng Spring Boot.
 }
