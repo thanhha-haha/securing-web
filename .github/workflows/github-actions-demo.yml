@@ -11,6 +11,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build with Maven
+        run: mvn -B clean package --file securing-web/pom.xml
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -23,7 +32,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./securing-web
           file: ./securing-web/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/securing-web-app:latest
